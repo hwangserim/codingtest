@@ -1,0 +1,17 @@
+package codingtest;
+
+//자연수 N이 입력되면 “Hello MyCompany!”를 N번 출력하라.
+
+import java.util.Scanner;
+
+public class HelloCompany {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for(int i=0; i<n; i++){
+            System.out.println("Hello MyCompany");
+        }
+
+    }
+}
