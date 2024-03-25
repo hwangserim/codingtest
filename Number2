@@ -22,8 +22,8 @@ public class Number2 {
 
         // 숫자들을 곱함
         int product = 1;
-        for (String number : numbers) {
-            product *= Integer.parseInt(number);
+        for (String number : numbers) { //numbers 배열을 String 타입 number 변수에 저장
+            product *= Integer.parseInt(number); //저장한 String 타입 변수 number을 int 타입으로 바꾼 뒤 곱한 값을 product에 저장
         }
 
         // 곱한 결과를 한 글자씩 분리하여 리스트에 저장
