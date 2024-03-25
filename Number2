@@ -1,0 +1,46 @@
+package codingtest;
+
+/*
+세 정수 A, B, C를 사용자로부터 입력받아 곱한 값에 0~9의 숫자가 각각 몇개 들어있는지 센다.
+첫째 줄에는 A×B×C의 결과에 0 이 몇 번 쓰였는지 출력한다.
+마찬가지로 둘째 줄부터 열 번째 줄까지 A×B×C의 결과에 1부터 9까지의 숫자가 각각 몇 번 쓰였는지 차례로 한 줄에 하나씩 출력한다.
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Number2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+
+        // 세 개의 숫자를 입력 받음
+        String input = scanner.nextLine();
+        String[] numbers = input.split(","); //,를 쪼갬
+
+        // 숫자들을 곱함
+        int product = 1;
+        for (String number : numbers) {
+            product *= Integer.parseInt(number);
+        }
+
+        // 곱한 결과를 한 글자씩 분리하여 리스트에 저장
+        List<String> resultList = new ArrayList<>();
+        String productString = String.valueOf(product); //String.valueOf() - 파라미터로 null이 오면 "null"이라는 문자열을 출력
+        for (char digit : productString.toCharArray()) {
+            resultList.add(String.valueOf(digit));
+        }
+
+        // 결과 배열에 저장
+        for (String digit : resultList) {
+            array[Integer.parseInt(digit)] += 1;
+        }
+
+        // 결과 출력
+        for (int i : array) {
+            System.out.println(i);
+        }
+    }
+}
